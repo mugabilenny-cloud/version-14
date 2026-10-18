@@ -27,7 +27,9 @@ Configuration, in .streamlit/secrets.toml:
     [ads_admin]
     emails = ["staff@example.com", "another@example.com"]
 
-or as a comma-separated ADS_ADMIN_EMAILS environment variable.
+or as a comma-separated ADS_ADMIN_EMAILS environment variable, or in
+the committed .streamlit/app_config.toml (which is what lets the
+deployed app work without the Community Cloud Secrets UI).
 """
 import base64
 import json
@@ -47,6 +49,19 @@ def allowed_emails() -> list[str]:
     raw: list[str] = []
     try:
         section = st.secrets.get("ads_admin")
+        value = section.get("emails") if section else None
+        if isinstance(value, str):
+            raw.extend(value.split(","))
+        elif isinstance(value, (list, tuple)):
+            raw.extend(str(item) for item in value)
+    except Exception:
+        pass
+
+    # Committed config (see fcm_client.committed_config): lets a fresh
+    # deploy know the allowlist without the Secrets UI. Union with the
+    # other sources rather than replacing them.
+    try:
+        section = fcm_client.committed_config().get("ads_admin")
         value = section.get("emails") if section else None
         if isinstance(value, str):
             raw.extend(value.split(","))

@@ -270,8 +270,10 @@ databases and no third-party push services.
    each staff member under **Authentication → Users → Add user**. On their
    first sign-in at `/Ads_Admin`, Firebase sends a verification email;
    they must open it before the dashboard unlocks.
-6. Put everything in `.streamlit/secrets.toml` (local) or the app's
-   **Secrets** settings (Streamlit Community Cloud). Start from
+6. Configuration is looked up in three places, first match wins:
+   environment variables, `.streamlit/secrets.toml` (local), then the
+   committed `.streamlit/app_config.toml` (deployed). Locally, put
+   everything in `.streamlit/secrets.toml`; start from
    `.streamlit/secrets.toml.example`, which lists every key:
 
    ```toml
@@ -288,10 +290,14 @@ databases and no third-party push services.
    emails = ["staff@example.com"]
    ```
 
-   `.streamlit/secrets.toml` is gitignored. The service-account JSON is a
-   **real secret** — it can send notifications to the project; never commit
-   it or paste it into chat/issue trackers. The web config and VAPID key are
-   public by design (they are sent to the browser).
+   `.streamlit/secrets.toml` is gitignored. `.streamlit/app_config.toml`
+   is committed on purpose: it is the fallback that lets a fresh deploy
+   (Streamlit Community Cloud, Hugging Face Spaces, Render) run without
+   pasting anything into a Secrets UI. It ships in this repo with the
+   current project's values, including the service-account key, so **the
+   repository must stay private** — anyone who can read it can send
+   notifications to the project. The web config and VAPID key are public
+   by design (they are sent to the browser).
 
 7. `pip install -r requirements.txt` (adds `google-auth`, used to mint the
    OAuth2 token for FCM; `requests` was already a Streamlit dependency but
@@ -458,6 +464,10 @@ assets/
   onboarding/            5 brand photos used by the sign-up carousel, the
                          Home banner, and the KIU Hub header
 .streamlit/config.toml
+.streamlit/app_config.toml
+                         committed fallback config (public web config,
+                         admin emails, service-account key -- repo must
+                         stay private)
 .streamlit/secrets.toml.example
-                         template for FCM + admin-password secrets
+                         template for FCM + admin secrets (local only)
 ```

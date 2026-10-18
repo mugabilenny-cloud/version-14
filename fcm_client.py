@@ -23,8 +23,11 @@ so push tokens collected at runtime do not survive a restart. Everyone
 has to opt in again after a redeploy. Fixing that needs storage outside
 the container; it is not fixed here.
 
-Configuration (environment variables for local runs, or the same names
-under a [fcm] table in .streamlit/secrets.toml):
+Configuration is looked up in three places, first match wins:
+
+  1. Environment variables (the names below).
+  2. The [fcm] table in .streamlit/secrets.toml (gitignored).
+  3. The [fcm] table in .streamlit/app_config.toml (committed).
 
   FCM_API_KEY / api_key
   FCM_AUTH_DOMAIN / auth_domain                    (optional but recommended)
@@ -34,10 +37,14 @@ under a [fcm] table in .streamlit/secrets.toml):
   FCM_VAPID_KEY / vapid_key                        (Web Push certificate key)
   FCM_SERVICE_ACCOUNT_JSON / service_account_json  (the downloaded private key)
 
-The web config values above are public by design (they are shipped to
-the browser by Firebase). The service-account JSON is a real secret and
-must never be committed -- it is the only thing that can actually send
-messages to the project.
+app_config.toml exists so a fresh Community Cloud deploy has the public
+web config without any Secrets-UI setup. The web config values are
+public by design (they are shipped to the browser by Firebase). The
+service-account JSON is a real secret: including it in app_config.toml
+is only acceptable when the GitHub repository is PRIVATE. On a public
+repo it gives anyone the ability to send pushes to the project -- keep
+the repo private, and rotate the key in the Firebase console if it has
+ever been exposed.
 """
 import base64
 import json
@@ -48,6 +55,7 @@ import time
 import uuid
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import timezone
+from functools import lru_cache
 from pathlib import Path
 from typing import Optional
 from urllib.parse import quote
@@ -56,6 +64,14 @@ import streamlit as st
 
 PUSH_TOKENS_PATH = Path(__file__).parent / "data" / "push_tokens.json"
 ADS_HISTORY_PATH = Path(__file__).parent / "data" / "ads.json"
+
+# Committed configuration, used when neither an environment variable nor
+# st.secrets supplies a value. Unlike .streamlit/secrets.toml (which is
+# gitignored), this file is meant to ship with the app so a fresh deploy
+# on Streamlit Community Cloud still has the public Firebase web config.
+# It can also hold the service-account JSON -- see the warning at the top
+# of the file itself.
+APP_CONFIG_PATH = Path(__file__).parent / ".streamlit" / "app_config.toml"
 
 # Root-relative on purpose: Streamlit serves the project's static/ folder
 # at /app/static/<file>, and notification resources are resolved from the
@@ -112,7 +128,8 @@ def _write_json_atomic(path: Path, data) -> None:
 
 def _setting(key: str, env_name: str) -> str:
     """Read one FCM setting: environment first (handy for local runs),
-    then the [fcm] table in st.secrets. Returns "" when absent.
+    then the [fcm] table in st.secrets, then the committed
+    .streamlit/app_config.toml. Returns "" when absent.
 
     st.secrets raises when no secrets.toml exists at all, which is a
     perfectly normal state for a local checkout -- every lookup is
@@ -129,7 +146,37 @@ def _setting(key: str, env_name: str) -> str:
                 return str(raw).strip()
     except Exception:
         pass
+    try:
+        section = _committed_config().get("fcm")
+        if section:
+            raw = section.get(key)
+            if raw:
+                return str(raw).strip()
+    except Exception:
+        pass
     return ""
+
+
+@lru_cache(maxsize=1)
+def _committed_config() -> dict:
+    """Parse .streamlit/app_config.toml once. Returns {} if the file is
+    missing or unreadable -- this is optional configuration, never a
+    reason to fail at import time."""
+    try:
+        try:
+            import tomllib
+        except ImportError:  # Python < 3.11
+            import tomli as tomllib
+        with open(APP_CONFIG_PATH, "rb") as fh:
+            return tomllib.load(fh)
+    except Exception:
+        return {}
+
+
+def committed_config() -> dict:
+    """The committed app config, for modules that need another section
+    (admin_auth uses [ads_admin]). Empty dict when the file is absent."""
+    return _committed_config()
 
 
 def service_account_info() -> Optional[dict]:
@@ -147,6 +194,13 @@ def service_account_info() -> Optional[dict]:
     try:
         section = st.secrets.get("fcm")
         table = section.get("service_account") if section else None
+        if table:
+            return dict(table)
+    except Exception:
+        pass
+
+    try:
+        table = _committed_config().get("fcm", {}).get("service_account")
         if table:
             return dict(table)
     except Exception:

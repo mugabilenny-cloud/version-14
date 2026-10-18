@@ -1,0 +1,20 @@
+[theme]
+primaryColor = "#E85D2C"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#FBF3EC"
+textColor = "#1A1A2E"
+font = "sans serif"
+
+[server]
+headless = true
+enableCORS = false
+enableXsrfProtection = true
+maxUploadSize = 25
+# FCM web push: static/firebase-messaging-sw.js and static/fcm.html are
+# served from /app/static/. Streamlit's static file serving is off by
+# default, so it has to be enabled explicitly. See README.md,
+# "Push notifications (FCM) for ads".
+enableStaticServing = true
+
+[browser]
+gatherUsageStats = false

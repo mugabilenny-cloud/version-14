@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Switch",
+    "body": "hello",
+    "image_url": "",
+    "click_url": "/",
+    "icon_url": "/app/static/icons/switch-192.png",
+    "sent": 1,
+    "failed": 0,
+    "pruned": 0,
+    "id": "d0d880ac754d",
+    "sent_at": 1792299384.5943902
+  },
+  {
+    "title": "Switch",
+    "body": "vote sula for presidency",
+    "image_url": "",
+    "click_url": "/",
+    "icon_url": "/app/static/icons/switch-192.png",
+    "sent": 1,
+    "failed": 0,
+    "pruned": 0,
+    "id": "ed22501f8d08",
+    "sent_at": 1792296383.7849085
+  }
+]

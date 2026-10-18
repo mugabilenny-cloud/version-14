@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ads dashboard sign-in</title>
+  <!--
+    Staff sign-in for /Ads_Admin. Loaded in a plain same-origin iframe by
+    pages/8_Ads_Admin.py (a sandboxed Streamlit component cannot keep a
+    Firebase Auth session). Uses the same public Firebase web config as
+    the push client. The ID token is handed to the Streamlit page with a
+    one-time top-level redirect; the server verifies it and checks the
+    email against [ads_admin] emails.
+  -->
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+  <style>
+    html, body { margin: 0; padding: 0; background: transparent; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #1A1A2E;
+    }
+    .card {
+      box-sizing: border-box;
+      border: 1px solid #E5E7EB;
+      border-radius: 12px;
+      background: #FFFFFF;
+      padding: 14px 16px 15px;
+      max-width: 420px;
+    }
+    .title { font-weight: 700; font-size: 15px; line-height: 1.25; }
+    .sub { color: #6B7280; font-size: 12px; line-height: 1.4; margin-top: 3px; }
+    form { margin-top: 11px; }
+    input {
+      box-sizing: border-box;
+      width: 100%;
+      margin-bottom: 8px;
+      border: 1px solid #D1D5DB;
+      border-radius: 8px;
+      padding: 9px 10px;
+      font-size: 13px;
+      color: #1A1A2E;
+      background: #FFFFFF;
+    }
+    input:focus { outline: 2px solid #E85D2C33; border-color: #E85D2C; }
+    button {
+      box-sizing: border-box;
+      width: 100%;
+      border: 0;
+      border-radius: 8px;
+      background: #E85D2C;
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 9px 10px;
+      cursor: pointer;
+    }
+    button.secondary {
+      background: #F3F4F6;
+      color: #1A1A2E;
+      margin-top: 6px;
+    }
+    button:disabled { opacity: 0.6; cursor: default; }
+    .status { min-height: 0; margin-top: 8px; font-size: 11.5px; line-height: 1.4; color: #6B7280; }
+    .status.error { color: #B91C1C; }
+    .status.ok { color: #047857; }
+    #verify { margin-top: 11px; }
+  </style>
+</head>
+<body>
+  <div id="ui" class="card" hidden>
+    <div class="title">Staff sign-in</div>
+    <div class="sub">Use an authorized staff email. Students cannot access this dashboard.</div>
+    <form id="form">
+      <input id="email" type="email" autocomplete="username" placeholder="you@example.com" required>
+      <input id="password" type="password" autocomplete="current-password" placeholder="Password" required>
+      <button id="submit" type="submit">Sign in</button>
+    </form>
+    <div id="verify" hidden>
+      <div class="sub" id="verifyText"></div>
+      <button id="check" type="button">I've verified — continue</button>
+      <button id="resend" type="button" class="secondary">Resend verification email</button>
+    </div>
+    <div id="status" class="status" role="status"></div>
+  </div>
+
+  <script>
+  (function () {
+    "use strict";
+
+    var params = new URLSearchParams(window.location.search);
+    var configRaw = params.get("config") || "";
+    var denied = params.get("denied") === "1";
+    var signOut = params.get("signout") === "1";
+
+    var ui = document.getElementById("ui");
+    var form = document.getElementById("form");
+    var emailEl = document.getElementById("email");
+    var passwordEl = document.getElementById("password");
+    var submitEl = document.getElementById("submit");
+    var verifyEl = document.getElementById("verify");
+    var verifyText = document.getElementById("verifyText");
+    var checkEl = document.getElementById("check");
+    var resendEl = document.getElementById("resend");
+    var statusEl = document.getElementById("status");
+
+    function decodeBase64Url(raw) {
+      var value = String(raw || "").replace(/-/g, "+").replace(/_/g, "/");
+      while (value.length % 4) value += "=";
+      var binary = atob(value);
+      var bytes = new Uint8Array(binary.length);
+      for (var i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+      return new TextDecoder().decode(bytes);
+    }
+
+    function setStatus(message, kind) {
+      statusEl.textContent = message || "";
+      statusEl.className = "status" + (kind ? " " + kind : "");
+    }
+
+    function showUi() {
+      ui.hidden = false;
+    }
+
+    var firebaseConfig = null;
+    try {
+      firebaseConfig = JSON.parse(decodeBase64Url(configRaw));
+    } catch (error) {
+      firebaseConfig = null;
+    }
+
+    if (!firebaseConfig || !firebaseConfig.apiKey) {
+      showUi();
+      setStatus("Staff sign-in is not configured for this app yet.", "error");
+      submitEl.disabled = true;
+      return;
+    }
+
+    firebase.initializeApp(firebaseConfig);
+    var auth = firebase.auth();
+
+    var handingOff = false;
+
+    function friendlyError(error) {
+      var code = (error && error.code) || "";
+      if (code === "auth/invalid-email") return "That email address doesn't look right.";
+      if (code === "auth/user-not-found" || code === "auth/wrong-password" ||
+          code === "auth/invalid-credential" || code === "auth/invalid-login-credentials") {
+        return "Email or password is incorrect.";
+      }
+      if (code === "auth/too-many-requests") {
+        return "Too many attempts. Wait a minute and try again.";
+      }
+      if (code === "auth/network-request-failed") {
+        return "Couldn't reach Firebase. Check the connection and try again.";
+      }
+      return "Couldn't sign in. Try again.";
+    }
+
+    function handOffToServer(user) {
+      if (handingOff) return;
+      handingOff = true;
+      submitEl.disabled = true;
+      setStatus("Signing in…", "ok");
+      user.getIdToken(true).then(function (token) {
+        // One-time handoff; pages/8_Ads_Admin.py verifies the token,
+        // stores the email in the Streamlit session, then strips the
+        // parameter.
+        var topUrl = new URL(window.top.location.href);
+        topUrl.searchParams.set("admin_token", token);
+        window.top.location.replace(topUrl.toString());
+      }).catch(function () {
+        handingOff = false;
+        submitEl.disabled = false;
+        setStatus("Couldn't complete sign-in. Try again.", "error");
+      });
+    }
+
+    function showVerification(user, justSent) {
+      form.hidden = true;
+      verifyEl.hidden = false;
+      verifyText.textContent =
+        "Open the verification link Firebase sent to " + user.email +
+        ", then come back and tap the button below.";
+      if (justSent) setStatus("Verification email sent.", "ok");
+    }
+
+    function afterSignIn(user) {
+      if (!user.emailVerified) {
+        user.sendEmailVerification().then(function () {
+          showVerification(user, true);
+        }).catch(function () {
+          showVerification(user, false);
+          setStatus("Couldn't send the verification email. Try again below.", "error");
+        });
+        return;
+      }
+      handOffToServer(user);
+    }
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      var email = emailEl.value.trim();
+      var password = passwordEl.value;
+      if (!email || !password) {
+        setStatus("Enter your email and password.", "error");
+        return;
+      }
+      submitEl.disabled = true;
+      setStatus("Checking…");
+      auth.signInWithEmailAndPassword(email, password)
+        .then(function (credential) { afterSignIn(credential.user); })
+        .catch(function (error) {
+          submitEl.disabled = false;
+          setStatus(friendlyError(error), "error");
+        });
+    });
+
+    checkEl.addEventListener("click", function () {
+      var user = auth.currentUser;
+      if (!user) {
+        form.hidden = false;
+        verifyEl.hidden = true;
+        submitEl.disabled = false;
+        return;
+      }
+      user.reload().then(function () {
+        if (auth.currentUser && auth.currentUser.emailVerified) {
+          handOffToServer(auth.currentUser);
+        } else {
+          setStatus("Still not verified. Open the link in your inbox first.", "error");
+        }
+      }).catch(function () {
+        setStatus("Couldn't check verification. Try again.", "error");
+      });
+    });
+
+    resendEl.addEventListener("click", function () {
+      var user = auth.currentUser;
+      if (!user) return;
+      user.sendEmailVerification().then(function () {
+        setStatus("Verification email sent again.", "ok");
+      }).catch(function () {
+        setStatus("Couldn't send the email. Try again shortly.", "error");
+      });
+    });
+
+    showUi();
+
+    if (signOut || denied) {
+      // Lock button, or the server rejected the last token. Never
+      // auto-hand-off in this state, or an unauthorized account would
+      // bounce between here and the server forever.
+      auth.signOut().catch(function () {});
+    } else {
+      // A refresh inside the same browser loses Streamlit's session
+      // state but Firebase keeps the signed-in user, so hand the token
+      // back automatically instead of asking for the password again.
+      auth.onAuthStateChanged(function (user) {
+        if (user && user.emailVerified) handOffToServer(user);
+      });
+    }
+
+    if (denied) {
+      setStatus("This account isn't authorized to manage ads.", "error");
+    }
+  })();
+  </script>
+</body>
+</html>

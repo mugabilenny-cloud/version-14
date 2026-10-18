@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Switch notifications</title>
+  <!--
+    Browser half of the FCM feature. Loaded by ui_components.py in two
+    modes:
+
+      mode=ui       the visible "Enable notifications" card on Home
+      mode=runtime  a hidden copy on every page that only keeps the
+                    foreground onMessage handler registered, so an ad
+                    sent while someone is browsing another page still
+                    shows up instead of being swallowed by the FCM
+                    "app is in the foreground" path.
+
+    This page is loaded in a plain same-origin iframe (not a sandboxed
+    Streamlit component) because registering a service worker requires a
+    real same-origin document. It receives the public Firebase config
+    and VAPID key in the query string; neither is a secret.
+  -->
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-messaging-compat.js"></script>
+  <style>
+    html, body { margin: 0; padding: 0; background: transparent; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #1A1A2E;
+    }
+    .card {
+      box-sizing: border-box;
+      border: 1px solid #E5E7EB;
+      border-radius: 12px;
+      background: #FFFFFF;
+      padding: 12px 14px 13px;
+    }
+    .row { display: flex; align-items: center; gap: 10px; }
+    .bell {
+      width: 34px; height: 34px; flex: 0 0 34px;
+      border-radius: 50%;
+      background: #FBF3EC;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 17px;
+    }
+    .title { font-weight: 700; font-size: 14px; line-height: 1.25; }
+    .sub { color: #6B7280; font-size: 12px; line-height: 1.35; margin-top: 1px; }
+    button {
+      width: 100%;
+      margin-top: 10px;
+      border: 0;
+      border-radius: 8px;
+      background: #E85D2C;
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 8px 10px;
+      cursor: pointer;
+    }
+    button:disabled { opacity: 0.6; cursor: default; }
+    .status { min-height: 0; margin-top: 6px; font-size: 11px; line-height: 1.35; color: #6B7280; }
+    .status.error { color: #B91C1C; }
+    .status.ok { color: #047857; }
+  </style>
+</head>
+<body>
+  <div id="ui" class="card" hidden>
+    <div class="row">
+      <div class="bell" aria-hidden="true">&#128276;</div>
+      <div>
+        <div class="title">Campus notifications</div>
+        <div class="sub" id="sub">New notes, hostels, jobs and scholarships.</div>
+      </div>
+    </div>
+    <button id="enable" type="button">Enable notifications</button>
+    <div id="status" class="status" role="status"></div>
+  </div>
+
+  <script>
+  (function () {
+    "use strict";
+
+    var DEFAULT_ICON = "/app/static/icons/switch-192.png";
+    var DEFAULT_BADGE = "/app/static/icons/switch-96.png";
+
+    var params = new URLSearchParams(window.location.search);
+    var mode = params.get("mode") === "runtime" ? "runtime" : "ui";
+    var configRaw = params.get("config") || "";
+    var vapid = params.get("vapid") || "";
+    // Whether the server already has a registration token for the
+    // signed-in user (passed by ui_components.notification_optin).
+    var hasServerToken = params.get("has_token") === "1";
+    // Home's hidden copy: re-register silently when permission is
+    // already granted but the server lost the token.
+    var autoSync = params.get("auto") === "1";
+    var firebaseConfig = null;
+
+    var ui = document.getElementById("ui");
+    var button = document.getElementById("enable");
+    var statusEl = document.getElementById("status");
+
+    function decodeBase64Url(raw) {
+      var value = String(raw || "").replace(/-/g, "+").replace(/_/g, "/");
+      while (value.length % 4) value += "=";
+      var binary = atob(value);
+      var bytes = new Uint8Array(binary.length);
+      for (var i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+      return new TextDecoder().decode(bytes);
+    }
+
+    try {
+      firebaseConfig = JSON.parse(decodeBase64Url(configRaw));
+    } catch (error) {
+      firebaseConfig = null;
+    }
+
+    function showUi() {
+      if (ui) ui.hidden = false;
+    }
+
+    function collapseUi() {
+      // The card is an iframe embedded by st.markdown, fixed at 176px.
+      // Hiding just the card inside it would leave a blank gap, so
+      // remove the frame itself (same-origin, so frameElement is
+      // reachable) along with its immediate wrapper.
+      if (ui) ui.hidden = true;
+      try {
+        var frame = window.frameElement;
+        if (frame) {
+          frame.style.display = "none";
+          if (frame.parentElement) frame.parentElement.style.display = "none";
+        }
+      } catch (error) {}
+    }
+
+    if (mode === "runtime") {
+      document.documentElement.style.visibility = "hidden";
+    }
+
+    function setStatus(message, kind) {
+      if (!statusEl) return;
+      statusEl.textContent = message || "";
+      statusEl.className = "status" + (kind ? " " + kind : "");
+    }
+
+    function disableButton(label) {
+      if (!button) return;
+      button.disabled = true;
+      if (label) button.textContent = label;
+    }
+
+    function enableButton(label) {
+      if (!button) return;
+      button.disabled = false;
+      button.textContent = label;
+    }
+
+    if (!firebaseConfig || !firebaseConfig.messagingSenderId || !vapid) {
+      if (mode === "ui") {
+        showUi();
+        setStatus("Notifications aren't configured for this app yet.", "error");
+        disableButton("Unavailable");
+      }
+      return;
+    }
+
+    if (!("serviceWorker" in navigator) ||
+        !("PushManager" in window) ||
+        !("Notification" in window)) {
+      if (mode === "ui") {
+        showUi();
+        setStatus("This browser doesn't support web push notifications.", "error");
+        disableButton("Unsupported");
+      }
+      return;
+    }
+
+    var setupPromise = null;
+
+    function setup(withForeground) {
+      if (setupPromise) return setupPromise;
+      setupPromise = (async function () {
+        // The config travels in the worker's URL. Registering the same
+        // URL+scope again returns the existing registration, so both the
+        // visible card and the hidden runtime copies can call this.
+        var swUrl = "/app/static/firebase-messaging-sw.js?config=" +
+          encodeURIComponent(configRaw);
+        var registration = await navigator.serviceWorker.register(swUrl, {
+          scope: "/app/static/"
+        });
+
+        if (!firebase.apps.length) {
+          firebase.initializeApp(firebaseConfig);
+        }
+        var messaging = firebase.messaging();
+        if (withForeground) {
+          messaging.onMessage(function (payload) {
+            showNotification((payload && payload.data) || {}, registration);
+          });
+        }
+        return { registration: registration, messaging: messaging };
+      })();
+      return setupPromise;
+    }
+
+    async function showNotification(data, registration) {
+      if (Notification.permission !== "granted") return;
+      var options = {
+        body: data.body || "",
+        icon: data.icon || DEFAULT_ICON,
+        badge: DEFAULT_BADGE,
+        tag: "switch-ad",
+        renotify: true,
+        data: { click_url: data.click_url || "/" }
+      };
+      if (data.image) options.image = data.image;
+
+      try {
+        if (registration && registration.showNotification) {
+          await registration.showNotification(data.title || "Switch", options);
+        } else {
+          var notification = new Notification(data.title || "Switch", options);
+          notification.onclick = function () {
+            try { window.top.location.href = data.click_url || "/"; } catch (e) {}
+            notification.close();
+          };
+        }
+      } catch (error) {
+        // Foreground display is best-effort; background delivery is
+        // handled by the service worker and is the path that matters.
+      }
+    }
+
+    async function enable() {
+      if (button && button.disabled) return;
+      disableButton("Enabling…");
+      setStatus("");
+
+      try {
+        var permission = Notification.permission;
+        if (permission !== "granted") {
+          permission = await Notification.requestPermission();
+        }
+        if (permission !== "granted") {
+          setStatus("Notifications were blocked. Allow them in this site's browser settings and try again.", "error");
+          enableButton("Try again");
+          return;
+        }
+
+        var context = await setup(true);
+        var token = await context.messaging.getToken({
+          vapidKey: vapid,
+          serviceWorkerRegistration: context.registration
+        });
+        if (!token) throw new Error("Firebase didn't return a device token.");
+
+        // The only reliable channel from a static iframe back to
+        // Streamlit is a top-level reload. The token is saved, then
+        // immediately stripped from the URL by pages/1_Home.py.
+        var topUrl = new URL(window.top.location.href);
+        topUrl.searchParams.set("fcm_token", token);
+        window.top.location.replace(topUrl.toString());
+      } catch (error) {
+        setStatus((error && error.message) || "Couldn't enable notifications.", "error");
+        enableButton("Try again");
+      }
+    }
+
+    if (mode === "runtime") {
+      if (autoSync) {
+        // Home-only silent repair: this browser already allows
+        // notifications, but the server has no token for this user
+        // (usually the token store was wiped by a restart). Fetch one
+        // and hand it back; no card, no click.
+        if (Notification.permission !== "granted" || hasServerToken) return;
+
+        var lastTry = 0;
+        try {
+          lastTry = Number(window.sessionStorage.getItem("switch_fcm_autosync") || 0);
+        } catch (error) {}
+        // If the handoff failed last time, don't reload in a loop.
+        if (Date.now() - lastTry < 5 * 60 * 1000) return;
+
+        setup(false).then(function (context) {
+          return context.messaging.getToken({
+            vapidKey: vapid,
+            serviceWorkerRegistration: context.registration
+          });
+        }).then(function (token) {
+          if (!token) return;
+          try {
+            window.sessionStorage.setItem("switch_fcm_autosync", String(Date.now()));
+          } catch (error) {}
+          var topUrl = new URL(window.top.location.href);
+          topUrl.searchParams.set("fcm_token", token);
+          window.top.location.replace(topUrl.toString());
+        }).catch(function () {});
+        return;
+      }
+
+      // Keep the foreground handler alive; never prompt from here.
+      if (Notification.permission === "granted") {
+        setup(true).then(function (context) {
+          return context.messaging.getToken({
+            vapidKey: vapid,
+            serviceWorkerRegistration: context.registration
+          });
+        }).catch(function () {});
+      }
+      return;
+    }
+
+    // The visible card exists only to request permission, and browsers
+    // refuse to show that prompt without a user gesture -- so it cannot
+    // be fully automatic. It is needed only while the permission is
+    // undecided. Granted or denied: show nothing at all. When granted
+    // but the server has no token, the hidden auto-sync copy above
+    // registers the device silently.
+    if (Notification.permission !== "default") {
+      collapseUi();
+      return;
+    }
+
+    showUi();
+    if (button) button.addEventListener("click", enable);
+  })();
+  </script>
+</body>
+</html>

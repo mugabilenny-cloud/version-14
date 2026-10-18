@@ -1,0 +1,1258 @@
+{
+  "nodes": [
+    {
+      "id": "ca7e2692-ee34-5e0a-9250-b648eb1e3696",
+      "name": "KIU",
+      "node_type": "university",
+      "parent_id": null,
+      "sort_order": 0
+    },
+    {
+      "id": "7e5cc84f-12b4-570b-9de8-731939e85043",
+      "name": "Health Sciences",
+      "node_type": "faculty",
+      "parent_id": "ca7e2692-ee34-5e0a-9250-b648eb1e3696",
+      "sort_order": 0
+    },
+    {
+      "id": "777d02ac-c7e0-58bd-ba0f-0a4b1a292334",
+      "name": "BMS",
+      "node_type": "department",
+      "parent_id": "7e5cc84f-12b4-570b-9de8-731939e85043",
+      "sort_order": 0
+    },
+    {
+      "id": "4a341e0e-1cd6-583a-82f6-7d251853c16a",
+      "name": "Year 3",
+      "node_type": "year",
+      "parent_id": "777d02ac-c7e0-58bd-ba0f-0a4b1a292334",
+      "sort_order": 0
+    },
+    {
+      "id": "6a363bf1-41a9-5bf5-8c0c-76c654ffe4eb",
+      "name": "Semester 1",
+      "node_type": "semester",
+      "parent_id": "4a341e0e-1cd6-583a-82f6-7d251853c16a",
+      "sort_order": 0
+    },
+    {
+      "id": "83f70401-5dc5-5708-a49e-8218e6da332f",
+      "name": "Pathophysiology",
+      "node_type": "course_unit",
+      "parent_id": "6a363bf1-41a9-5bf5-8c0c-76c654ffe4eb",
+      "sort_order": 0,
+      "tile_url": "https://drive.google.com/file/d/1lWXsDFkFZDnu7Xn3evKw_UUE7YdjyHoJ/view?usp=drive_link"
+    },
+    {
+      "id": "d8373791-3d89-55c7-adcb-7f794ffc47d1",
+      "name": "Class",
+      "node_type": "leaf",
+      "parent_id": "83f70401-5dc5-5708-a49e-8218e6da332f",
+      "sort_order": 0
+    },
+    {
+      "id": "72b128c2-2759-508a-b022-aebce611409a",
+      "name": "Histopathology",
+      "node_type": "course_unit",
+      "parent_id": "6a363bf1-41a9-5bf5-8c0c-76c654ffe4eb",
+      "sort_order": 1,
+      "tile_url": "https://drive.google.com/file/d/1gtClWPCGpIjRMTFZ4WYGLZvdqUtTTpUk/view?usp=sharing"
+    },
+    {
+      "id": "9593455a-e00e-5821-831e-76189c3274fc",
+      "name": "Class",
+      "node_type": "leaf",
+      "parent_id": "72b128c2-2759-508a-b022-aebce611409a",
+      "sort_order": 0
+    },
+    {
+      "id": "fed582bd-b7e8-5eb6-903c-cd427d581c7a",
+      "name": "Chemopathology",
+      "node_type": "course_unit",
+      "parent_id": "6a363bf1-41a9-5bf5-8c0c-76c654ffe4eb",
+      "sort_order": 2,
+      "tile_url": "https://drive.google.com/file/d/1PbVcG_g0-mPJGZA1SYcTZbiixbyIMs3I/view?usp=sharing"
+    },
+    {
+      "id": "c533f48b-1fed-5986-a3aa-7af02786c42a",
+      "name": "Class",
+      "node_type": "leaf",
+      "parent_id": "fed582bd-b7e8-5eb6-903c-cd427d581c7a",
+      "sort_order": 0
+    },
+    {
+      "id": "1a638d23-b5b3-547e-b7cc-2cc3c862b242",
+      "name": "Hematology",
+      "node_type": "course_unit",
+      "parent_id": "6a363bf1-41a9-5bf5-8c0c-76c654ffe4eb",
+      "sort_order": 3,
+      "tile_url": "https://drive.google.com/file/d/1JOJ-owIil3wx80hZd4lLjQI7o6DJC313/view?usp=sharing"
+    },
+    {
+      "id": "eff9fa2e-2cf6-5318-936f-6062caa044f8",
+      "name": "Class",
+      "node_type": "leaf",
+      "parent_id": "1a638d23-b5b3-547e-b7cc-2cc3c862b242",
+      "sort_order": 0
+    },
+    {
+      "id": "18b71a73-275b-5d66-b33b-eb68b08c200f",
+      "name": "Clinical Micro B",
+      "node_type": "course_unit",
+      "parent_id": "6a363bf1-41a9-5bf5-8c0c-76c654ffe4eb",
+      "sort_order": 4,
+      "tile_url": "https://drive.google.com/file/d/1k1RL9i86KrJh2_a5pHuEnT83QtByqRAl/view?usp=sharing"
+    },
+    {
+      "id": "9a2a9ec3-1e12-5131-b0cb-0f7083e79a82",
+      "name": "Class",
+      "node_type": "leaf",
+      "parent_id": "18b71a73-275b-5d66-b33b-eb68b08c200f",
+      "sort_order": 0
+    },
+    {
+      "id": "c02264a3-27dc-5833-b8b0-43cf374ec623",
+      "name": "Year 2",
+      "node_type": "year",
+      "parent_id": "777d02ac-c7e0-58bd-ba0f-0a4b1a292334",
+      "sort_order": 1
+    },
+    {
+      "id": "fd3aa2b1-1f26-5def-9090-babed8434c6c",
+      "name": "Semester 1",
+      "node_type": "semester",
+      "parent_id": "c02264a3-27dc-5833-b8b0-43cf374ec623",
+      "sort_order": 0
+    },
+    {
+      "id": "fda83d6a-ed1c-5a1d-9271-d10d3dca1c4e",
+      "name": "Physiology",
+      "node_type": "course_unit",
+      "parent_id": "fd3aa2b1-1f26-5def-9090-babed8434c6c",
+      "sort_order": 0,
+      "tile_url": "https://drive.google.com/file/d/1Tn9szKue--NB3bcer9UiRB90BXft9d-q/view?usp=sharing"
+    },
+    {
+      "id": "265921bc-35f6-5b95-b60d-f1cbe5c03bfd",
+      "name": "Class",
+      "node_type": "leaf",
+      "parent_id": "fda83d6a-ed1c-5a1d-9271-d10d3dca1c4e",
+      "sort_order": 0
+    },
+    {
+      "id": "04eb4c4a-7c35-512a-9a79-39e7eb3ce8cd",
+      "name": "Pharmacology",
+      "node_type": "course_unit",
+      "parent_id": "fd3aa2b1-1f26-5def-9090-babed8434c6c",
+      "sort_order": 1
+    },
+    {
+      "id": "444d5953-c0ba-5c1b-b2ce-253e4b52cd88",
+      "name": "Class",
+      "node_type": "leaf",
+      "parent_id": "04eb4c4a-7c35-512a-9a79-39e7eb3ce8cd",
+      "sort_order": 0
+    }
+  ],
+  "links": [
+    {
+      "id": "f871a419-7124-584d-ba67-9cf2992b2e45",
+      "node_id": "d8373791-3d89-55c7-adcb-7f794ffc47d1",
+      "link_kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=ONvvTbKR_UA",
+      "title": "Epilepsy 2"
+    },
+    {
+      "id": "fbd1f90e-6fc4-5662-8368-49ab9c42e73f",
+      "node_id": "d8373791-3d89-55c7-adcb-7f794ffc47d1",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1P33jGqQgbjshKfhwhJ3aJYcIwnKsx2fo/edit?usp=sharing&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "Epilepsy 2"
+    },
+    {
+      "id": "3e84e18c-25eb-5ada-9447-e6896c2083d2",
+      "node_id": "d8373791-3d89-55c7-adcb-7f794ffc47d1",
+      "link_kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=xQC6L8M6XfU",
+      "title": "Meningitis"
+    },
+    {
+      "id": "957aa664-7f3a-5e9f-99f9-665b3ed7e5f2",
+      "node_id": "d8373791-3d89-55c7-adcb-7f794ffc47d1",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1w5uY6WTip5zJ-oeryQmHiTIf58ti0ybJ/edit?usp=sharing&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "Meningitis"
+    },
+    {
+      "id": "7905c74d-5c84-55cd-be28-716cf2def76a",
+      "node_id": "d8373791-3d89-55c7-adcb-7f794ffc47d1",
+      "link_kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=XBg6hxGgyS4",
+      "title": "Obstructive Lung Diesease"
+    },
+    {
+      "id": "957aa664-7f3a-5e9f-99f9-665b3ed7e5f2",
+      "node_id": "d8373791-3d89-55c7-adcb-7f794ffc47d1",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1w5uY6WTip5zJ-oeryQmHiTIf58ti0ybJ/edit?usp=sharing&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "Obstructive Lung Diesease"
+    },
+    {
+      "id": "e963ef15-f176-58f4-a27f-af2256fda371",
+      "node_id": "d8373791-3d89-55c7-adcb-7f794ffc47d1",
+      "link_kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=zH7DmuV24DU",
+      "title": "Stroke 1"
+    },
+    {
+      "id": "b75882ef-c064-5b11-95dc-728d11a9a9a1",
+      "node_id": "d8373791-3d89-55c7-adcb-7f794ffc47d1",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1J4g01ZDN-Zq2E4y4ZkVAxv2yZb8vbG2k/edit?usp=sharing&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "Stroke 2"
+    },
+    {
+      "id": "ad4097a4-e934-5006-88ba-803634f4a65c",
+      "node_id": "d8373791-3d89-55c7-adcb-7f794ffc47d1",
+      "link_kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=04OFNW-C1_M",
+      "title": "Reproductive System -Pathophysiology"
+    },
+    {
+      "id": "19206d11-4be8-59a8-8ee7-33f88489a816",
+      "node_id": "d8373791-3d89-55c7-adcb-7f794ffc47d1",
+      "link_kind": "drive_notes",
+      "url": "https://drive.google.com/file/d/1_i1W9_RMF7ivMAKFQTIQODUeg20-cSn9/view?usp=sharing",
+      "title": "Reproductive System -Pathophysiology"
+    },
+    {
+      "id": "f72f8e24-8018-52d4-9d28-a475d6a4e540",
+      "node_id": "d8373791-3d89-55c7-adcb-7f794ffc47d1",
+      "link_kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=JhmTvH3trPQ",
+      "title": "Infertility Jovile"
+    },
+    {
+      "id": "197a87c1-9ff2-581d-ae66-2015d87961f8",
+      "node_id": "d8373791-3d89-55c7-adcb-7f794ffc47d1",
+      "link_kind": "drive_notes",
+      "url": "https://drive.google.com/file/d/10iBcVCYbZZ7-Cfppzs0XIU9ranqPxNjh/view?usp=sharing",
+      "title": "Infertility Jovile"
+    },
+    {
+      "id": "9f29c1a2-1686-5bcb-8268-8ac960db8fb3",
+      "node_id": "d8373791-3d89-55c7-adcb-7f794ffc47d1",
+      "link_kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=MbFJTlwykvA",
+      "title": "Disorders of the Female Genital Tract"
+    },
+    {
+      "id": "98a8904b-159b-5fbe-bdbf-3c526950ce2c",
+      "node_id": "d8373791-3d89-55c7-adcb-7f794ffc47d1",
+      "link_kind": "drive_notes",
+      "url": "https://drive.google.com/file/d/1JaiNCUMFZw-i6YPEENuPiYCpZQeIJUaP/view?usp=sharing",
+      "title": "Disorders of the Female Genital Tract"
+    },
+    {
+      "id": "d826222f-1715-5b92-92a5-5c5622c0c1eb",
+      "node_id": "d8373791-3d89-55c7-adcb-7f794ffc47d1",
+      "link_kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=yZ1AEQBweDQ",
+      "title": "Disorders of Breast"
+    },
+    {
+      "id": "c446ea47-8c5b-515c-ae90-7e3a015ee7d4",
+      "node_id": "d8373791-3d89-55c7-adcb-7f794ffc47d1",
+      "link_kind": "drive_notes",
+      "url": "https://drive.google.com/file/d/1g3uOthLG2wWgKZSAZamSwb6EocEu7AsB/view?usp=sharing",
+      "title": "Disorders of Breast"
+    },
+    {
+      "id": "edc66ccd-8428-520a-aa28-c45742046c05",
+      "node_id": "d8373791-3d89-55c7-adcb-7f794ffc47d1",
+      "link_kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=8smY6v3y8oA",
+      "title": "Prostate Gland Jovile"
+    },
+    {
+      "id": "a713d64a-e476-5ddd-9eb1-ee72c37417ae",
+      "node_id": "d8373791-3d89-55c7-adcb-7f794ffc47d1",
+      "link_kind": "drive_notes",
+      "url": "https://drive.google.com/file/d/15_RuU6tNiWMCDE3ytNuyLQgZ1fDsgdb5/view?usp=sharing",
+      "title": "Prostate Gland Jovile"
+    },
+    {
+      "id": "e07a0a18-da25-5f7f-9e40-924ee766b1b2",
+      "node_id": "d8373791-3d89-55c7-adcb-7f794ffc47d1",
+      "link_kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=j4v7PFw5wA0",
+      "title": "Burn"
+    },
+    {
+      "id": "0b7e6c9e-d7e8-51b2-b200-3b68169b2172",
+      "node_id": "d8373791-3d89-55c7-adcb-7f794ffc47d1",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/107Eq3MVF7EFz1z9tDqQbWlG8Qy3c5oa-/edit?usp=sharing&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "Burn"
+    },
+    {
+      "id": "19c68663-f9f2-5017-ba9f-fe369dbadb6c",
+      "node_id": "d8373791-3d89-55c7-adcb-7f794ffc47d1",
+      "link_kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=plhf1QUTam4",
+      "title": "Cardiovascular Pathophysiology"
+    },
+    {
+      "id": "7aa60793-9cb2-54b7-bd7b-c961a5a721d0",
+      "node_id": "d8373791-3d89-55c7-adcb-7f794ffc47d1",
+      "link_kind": "drive_notes",
+      "url": "https://drive.google.com/file/d/1Kw6m8PrHg9JxL-kpluuUZj1w37CPxPrl/view?usp=sharing",
+      "title": "Cardiovascular Pathophysiology"
+    },
+    {
+      "id": "8851e9bf-2a0e-5f18-9e32-17e1d64f015a",
+      "node_id": "d8373791-3d89-55c7-adcb-7f794ffc47d1",
+      "link_kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=1bYTGIq-i_E",
+      "title": "Encephalitis and Other Infections"
+    },
+    {
+      "id": "a1ecdd23-140e-5745-beb2-68ec488455a5",
+      "node_id": "d8373791-3d89-55c7-adcb-7f794ffc47d1",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/12r7Qx8QJ5qqGZqziSobKU8tTysoiHNkd/edit?usp=sharing&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "Encephalitis and Other Infections"
+    },
+    {
+      "id": "19c1518c-7935-5551-9826-8489c9d1b4a9",
+      "node_id": "d8373791-3d89-55c7-adcb-7f794ffc47d1",
+      "link_kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=nqyPECmkSeo",
+      "title": "Pneumonia"
+    },
+    {
+      "id": "41ac870b-1337-5a1b-9c15-4fc10670ab5f",
+      "node_id": "d8373791-3d89-55c7-adcb-7f794ffc47d1",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1EeLZKmbVE6Zmkkt7Fg2SOONmvPCBsfMH/edit?usp=sharing&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "Pneumonia"
+    },
+    {
+      "id": "17ad1eb4-2d64-5a1c-8119-0bf95d769889",
+      "node_id": "d8373791-3d89-55c7-adcb-7f794ffc47d1",
+      "link_kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=YLQhJpNqx1w",
+      "title": "Pulmonary Change Age"
+    },
+    {
+      "id": "ee0eead6-2b3c-5afd-8625-48c3943645fe",
+      "node_id": "d8373791-3d89-55c7-adcb-7f794ffc47d1",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1vMLfeHBsL-mF9iHJMEuYP6H8wpoZHfV_/edit?usp=sharing&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "Pulmonary Change Age"
+    },
+    {
+      "id": "9d79d2ae-e67e-5c6b-976c-b6aacbc9beff",
+      "node_id": "9593455a-e00e-5821-831e-76189c3274fc",
+      "link_kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=507uDOTuGX8",
+      "title": "OVARIAN AND GESTATIONAL DISORDERS.pptx"
+    },
+    {
+      "id": "375b9d9b-4d92-5974-a8ac-de667c51b17d",
+      "node_id": "9593455a-e00e-5821-831e-76189c3274fc",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1HDXKaDWP29Eb_wIWmwWQ6W5LTi72th0v/edit?usp=sharing&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "OVARIAN AND GESTATIONAL DISORDERS.pptx"
+    },
+    {
+      "id": "36880099-c803-5531-b658-0f3154dfef29",
+      "node_id": "9593455a-e00e-5821-831e-76189c3274fc",
+      "link_kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=ydFy85JCJxo",
+      "title": "Blood vessel disorders (hypertension, aneurysms,,vasculitis Nov24.pptx"
+    },
+    {
+      "id": "97508350-97df-56de-a30c-adad6660719f",
+      "node_id": "9593455a-e00e-5821-831e-76189c3274fc",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/16iHcebbRBJdGqc-46zRav7_IoTnBRIj3/edit?usp=sharing&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "Blood vessel disorders (hypertension, aneurysms,,vasculitis Nov25.pptx"
+    },
+    {
+      "id": "26873aac-faa8-5cd7-a324-285602b3ec19",
+      "node_id": "9593455a-e00e-5821-831e-76189c3274fc",
+      "link_kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=-ACMk062q7s",
+      "title": "ESE--Nutritional deficiency disorders & Disorders of metabolism (Diabetes mellitus).pptx"
+    },
+    {
+      "id": "8897a70f-fb5d-53e6-8f8e-fbf5af8c87cb",
+      "node_id": "9593455a-e00e-5821-831e-76189c3274fc",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/17A3gAb1wPKRcjCCyNGh4buD-3D8m2HH8/edit?usp=sharing&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "ESE--Nutritional deficiency disorders & Disorders of metabolism (Diabetes mellitus).pptx"
+    },
+    {
+      "id": "44077976-d02e-5295-821a-f7c265c05b91",
+      "node_id": "9593455a-e00e-5821-831e-76189c3274fc",
+      "link_kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=zv1-8F4yqZ4",
+      "title": "GIT PATHOLOGY.pptx"
+    },
+    {
+      "id": "86e494c9-98fa-5f85-9f56-15c8652be6d9",
+      "node_id": "9593455a-e00e-5821-831e-76189c3274fc",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1W9Clld97M-L9f5-BtDz1BQCS82I5Q9In/edit?usp=sharing&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "GIT PATHOLOGY.pptx"
+    },
+    {
+      "id": "15ce6024-286f-5149-9b4d-6191450dd942",
+      "node_id": "9593455a-e00e-5821-831e-76189c3274fc",
+      "link_kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=f-Fxlsb2dtQ",
+      "title": "Liver and Gall bladder disorders(BMS 3.0).pptx"
+    },
+    {
+      "id": "609ac1aa-9c8d-538a-bff4-8d55d856e405",
+      "node_id": "9593455a-e00e-5821-831e-76189c3274fc",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1cKul5qrOe30RlNOw0ZZmof8jUcDk9ADd/edit?usp=sharing&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "Liver and Gall bladder disorders(BMS 3.1).pptx"
+    },
+    {
+      "id": "3d9fb555-5f25-5999-9fd9-1717c8a056f9",
+      "node_id": "9593455a-e00e-5821-831e-76189c3274fc",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1H3ZWU7Vk372Xs0tpapCr_CsF0XdUuGrH/edit?usp=sharing&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "Lung disorders october 26"
+    },
+    {
+      "id": "db5c3f24-75f2-5abf-94c8-c2d0314b13a5",
+      "node_id": "9593455a-e00e-5821-831e-76189c3274fc",
+      "link_kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=WsgdNGZq1dQ",
+      "title": "Neoplasia overview"
+    },
+    {
+      "id": "9f4741c8-f84c-51c2-af1f-ac732b60006a",
+      "node_id": "9593455a-e00e-5821-831e-76189c3274fc",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1FK17tSKzfe6qfSGMdi5TnWg8D6wsvv7Q/edit?usp=sharing&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "Neoplasia overview"
+    },
+    {
+      "id": "dda941a0-05aa-597a-9ed6-a75b7480e889",
+      "node_id": "9593455a-e00e-5821-831e-76189c3274fc",
+      "link_kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=4qdkZJl0mUE",
+      "title": "Systemic Lups Erythematous"
+    },
+    {
+      "id": "e976b422-9efe-5dd7-abbb-074561178b9e",
+      "node_id": "9593455a-e00e-5821-831e-76189c3274fc",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/14zEQzDCNColOVTGxOmBbdMa_tUKTTbkW/edit?usp=sharing&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "Systemic Lups Erythematous"
+    },
+    {
+      "id": "1c7573e0-e697-5a70-a017-7a894e3a5bb6",
+      "node_id": "9593455a-e00e-5821-831e-76189c3274fc",
+      "link_kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=-xHOMwzWRTo",
+      "title": "The Male Genital Tract"
+    },
+    {
+      "id": "a248cef8-effb-51de-968d-763da170d34e",
+      "node_id": "9593455a-e00e-5821-831e-76189c3274fc",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1_Keblqp_qrvtsQO16XY-E1ksepYI_V2W/edit?usp=sharing&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "The Male Genital Tract"
+    },
+    {
+      "id": "edc4d815-ac8e-5134-a336-938a7c363859",
+      "node_id": "9593455a-e00e-5821-831e-76189c3274fc",
+      "link_kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=KiI9WMXBV_o",
+      "title": "Valvular heart diseases, cardiomyopathy and pericardial effusion oct 25"
+    },
+    {
+      "id": "c35dae63-888a-51ec-b273-4e7d1c9245d0",
+      "node_id": "9593455a-e00e-5821-831e-76189c3274fc",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1Ck6Gu1cKfFW0szH_1yyG6CjEnK-dBQRH/edit?usp=sharing&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "Valvular heart diseases, cardiomyopathy and pericardial effusion oct 26"
+    },
+    {
+      "id": "7c6d3ec5-6205-5b21-a254-d4e03121ce5b",
+      "node_id": "9593455a-e00e-5821-831e-76189c3274fc",
+      "link_kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=z1q99tYnpbQ",
+      "title": "Introduction to Pathology"
+    },
+    {
+      "id": "8a8ed6e8-c109-5214-a770-d977aa91ea0a",
+      "node_id": "9593455a-e00e-5821-831e-76189c3274fc",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1Ynh32gH41uXSi85RlELxasyYev1y8vWg/edit?usp=drive_link&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "Introduction to Pathology"
+    },
+    {
+      "id": "94c27fe2-61ab-59b4-b29e-76a5e481b21a",
+      "node_id": "9593455a-e00e-5821-831e-76189c3274fc",
+      "link_kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=R6QTiBfzULE",
+      "title": "Atherosclerosis"
+    },
+    {
+      "id": "8a8ed6e8-c109-5214-a770-d977aa91ea0a",
+      "node_id": "9593455a-e00e-5821-831e-76189c3274fc",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1Ynh32gH41uXSi85RlELxasyYev1y8vWg/edit?usp=drive_link&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "Atherosclerosis"
+    },
+    {
+      "id": "0482fd95-d06d-52fe-9695-206098736e6d",
+      "node_id": "9593455a-e00e-5821-831e-76189c3274fc",
+      "link_kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=Ie30O6zvEnk",
+      "title": "Chronic Inflammation"
+    },
+    {
+      "id": "e6cd45bf-1c81-52bf-8eae-2360529a4c2c",
+      "node_id": "9593455a-e00e-5821-831e-76189c3274fc",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1OXRONHlDJY5mBXd2IRXYLZ6osBAM3cdX/edit?usp=drive_link&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "Chronic Inflammation"
+    },
+    {
+      "id": "7462fdb8-3ea5-5bb6-81b3-81eb714644f0",
+      "node_id": "9593455a-e00e-5821-831e-76189c3274fc",
+      "link_kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=67Iheawnf6Q",
+      "title": "Acute Inflammation"
+    },
+    {
+      "id": "f327f276-eaeb-5b44-828c-308562fd3c4d",
+      "node_id": "9593455a-e00e-5821-831e-76189c3274fc",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/17xvgMKyJkeREd2RTi5iILPz-ASpzpAsU/edit?usp=sharing&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "Acute Inflammation"
+    },
+    {
+      "id": "76694329-df42-5533-b0ee-cb020746be64",
+      "node_id": "9593455a-e00e-5821-831e-76189c3274fc",
+      "link_kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=P3p2xav6iwY",
+      "title": "Cell Adaptation, Cell Injury, Cell Responses, Cell Death"
+    },
+    {
+      "id": "7b5d4840-7eef-52ae-b922-48b056275d05",
+      "node_id": "9593455a-e00e-5821-831e-76189c3274fc",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1d868mzr37m883zhBYMJW5RtGQC5NyAOX/edit?usp=drive_link&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "Cell Adaptation, Cell Injury, Cell Responses, Cell Death"
+    },
+    {
+      "id": "19488c01-f9ae-5bba-a4ff-40fb63a5a58b",
+      "node_id": "9593455a-e00e-5821-831e-76189c3274fc",
+      "link_kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=h0VkXOWvE2I",
+      "title": "Cell Injury"
+    },
+    {
+      "id": "08261176-aa43-594b-994c-2a5181fece34",
+      "node_id": "9593455a-e00e-5821-831e-76189c3274fc",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1-bc9ajgkzem8jpri0rj20E9KfORfJo0A/edit?usp=sharing&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "Cell Injury"
+    },
+    {
+      "id": "d04e80b9-a098-5f9c-af10-0bae4c4ca041",
+      "node_id": "9593455a-e00e-5821-831e-76189c3274fc",
+      "link_kind": "youtube",
+      "url": "https://www.youtube.com/watch?v=8JHP6vqYDCc",
+      "title": "Chronic Granulomatous Infections"
+    },
+    {
+      "id": "1c51f2e7-48e4-50d8-91f2-03f5b7b31281",
+      "node_id": "9593455a-e00e-5821-831e-76189c3274fc",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1g056ie2ulpcWZuzT0q9togMnFV3Gcr2g/edit?usp=sharing&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "Chronic Granulomatous Infections"
+    },
+    {
+      "id": "099ee631-e057-5300-8b99-6f1a54d2795e",
+      "node_id": "9593455a-e00e-5821-831e-76189c3274fc",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1QVMJrtIyl5Kmgr04oZ5s-pevg6rkF023/edit?usp=sharing&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "Disorders of circulation"
+    },
+    {
+      "id": "d6ac5ae9-4a18-5345-abc4-1eaac49c29fe",
+      "node_id": "9593455a-e00e-5821-831e-76189c3274fc",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1vxhtvLPVQnrUD-viU3WD7BpUK1KHLhFq/edit?usp=sharing&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "Lung disorders"
+    },
+    {
+      "id": "18459595-d983-5d5b-ad53-cbf674132898",
+      "node_id": "9593455a-e00e-5821-831e-76189c3274fc",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1cPDBKjCl25MIP3ioioFN2UVP1a2o_qIc/edit?usp=drive_link&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "Tissue Repair and Wound Healling"
+    },
+    {
+      "id": "b41550fb-a1ab-53d0-9ba8-b1b6b555174e",
+      "node_id": "c533f48b-1fed-5986-a3aa-7af02786c42a",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1vVbF_etMtWBFIoZvmV7R7s8ID3yMDcBq/edit?usp=sharing&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "Agua Y Electrolios"
+    },
+    {
+      "id": "26bac5c5-f027-57e7-938e-34676c633b98",
+      "node_id": "c533f48b-1fed-5986-a3aa-7af02786c42a",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1wkoMqw6ihQDC8UCtj_Hzew8645um37g7/edit?usp=sharing&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "Electrolytes macro and micro"
+    },
+    {
+      "id": "117cfd49-4fa4-58a8-8a69-6fa9b1c679b3",
+      "node_id": "c533f48b-1fed-5986-a3aa-7af02786c42a",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1t4r8f3AdstGjO23ZsECCcPtuIpg9kJuW/edit?usp=sharing&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "Inborn Errors of Metabolism"
+    },
+    {
+      "id": "aeb32455-e829-59d6-a9bf-f3b5c5a8f0fc",
+      "node_id": "c533f48b-1fed-5986-a3aa-7af02786c42a",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1j_ZSWYBwSR5axnazAqUPCXUpwG0xGQZQ/edit?usp=sharing&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "Cardiac Makers"
+    },
+    {
+      "id": "73c025c7-3d1d-5c15-abf1-ee850fbb52bd",
+      "node_id": "c533f48b-1fed-5986-a3aa-7af02786c42a",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/17Ak1bAopn2ATkUomIVFmOlz5WcZUdTr6/edit?usp=sharing&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "Introduction to Pathology"
+    },
+    {
+      "id": "46fa23f0-dd1d-50bc-b647-260fb0936094",
+      "node_id": "c533f48b-1fed-5986-a3aa-7af02786c42a",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1MARFZFr92dStk-AEIigGVHphS_aLaQ5p/edit?usp=sharing&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "Enzymes Clase"
+    },
+    {
+      "id": "ce1a8822-1e18-5f62-af1c-b6f1aa327106",
+      "node_id": "c533f48b-1fed-5986-a3aa-7af02786c42a",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1S9DDyjK2Z0sUXWrIB8mq24YG8mvftPEp/edit?usp=sharing&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "Acid -base"
+    },
+    {
+      "id": "a17382a8-076e-5f65-8f58-445bfe8d14cb",
+      "node_id": "c533f48b-1fed-5986-a3aa-7af02786c42a",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1fGeb4fNizfgDduIp2XEDm28mdbbA2lrc/edit?usp=sharing&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "Normal Kidney's Function"
+    },
+    {
+      "id": "dfdac785-9577-5eea-9472-99271debcd7f",
+      "node_id": "c533f48b-1fed-5986-a3aa-7af02786c42a",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/12qbv-gV_25xy1spNhiy0NjY0nt5zpQOc/edit?usp=sharing&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "Proteins,TotalProtein and Albumin"
+    },
+    {
+      "id": "9e148292-4052-5cad-892a-296bd83a920d",
+      "node_id": "c533f48b-1fed-5986-a3aa-7af02786c42a",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1p4_ZA6j7ILnBb5vLT0_At5rdF03vVJF0/edit?usp=drive_link&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "Kidney's Integrity"
+    },
+    {
+      "id": "5e7c28b0-a804-52a5-831c-fcd5134d308b",
+      "node_id": "c533f48b-1fed-5986-a3aa-7af02786c42a",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1_zXrgp_bRm2sfMGdkv74MFIdXbvSEqdi/edit?usp=drive_link&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "GTT Tayrab"
+    },
+    {
+      "id": "ab4a8dda-1dfc-5324-bd3c-0f417017c789",
+      "node_id": "c533f48b-1fed-5986-a3aa-7af02786c42a",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1WtMS7TR3YV067gMGfgF4KPOSa4YsX9Ta/edit?usp=drive_link&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "Diabetes Mellitus"
+    },
+    {
+      "id": "d8149583-e74b-5e7c-ac8a-6ab791d14e01",
+      "node_id": "c533f48b-1fed-5986-a3aa-7af02786c42a",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/19MKp_pt-HHuSZhcO8ptVqTYV-9FTI_wm/edit?usp=drive_link&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "Anterior Pituitary Hormones"
+    },
+    {
+      "id": "b164df18-b47c-5a3b-833b-c54ba172e5a9",
+      "node_id": "c533f48b-1fed-5986-a3aa-7af02786c42a",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/153WbaX6VhFYdJFVqqYjYfcGS8O4mkooN/edit?usp=drive_link&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "Thyroid Hormones"
+    },
+    {
+      "id": "d80f0dfd-779d-5b3f-9f71-00107bd514d2",
+      "node_id": "c533f48b-1fed-5986-a3aa-7af02786c42a",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1gcN8Zc4tvKQGIVZ12YzuZw4Bqo3AxDUV/edit?usp=sharing&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "Other Endocrine Organs"
+    },
+    {
+      "id": "f965703e-42d4-5e05-98d9-3dcbc83e1cf2",
+      "node_id": "c533f48b-1fed-5986-a3aa-7af02786c42a",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1-GHVIpDndFLxx77gj0AqMkY6mwEiHZ8z/edit?usp=sharing&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "Adrenal Modified"
+    },
+    {
+      "id": "61ae458d-61e3-571a-a4c2-d8dc979a4b93",
+      "node_id": "c533f48b-1fed-5986-a3aa-7af02786c42a",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1qNIJNaG3nBq9WK8UaVqkZK1m03Hqg2TR/edit?usp=drive_link&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "Diabetes Mellitus control"
+    },
+    {
+      "id": "10ecd9fa-efa6-5ce9-8354-bf5535402051",
+      "node_id": "c533f48b-1fed-5986-a3aa-7af02786c42a",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1GuPsgpeXPchgBTHxK37x7DE7VcPx_Avo/edit?usp=drive_link&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "Hormones and Endocrine"
+    },
+    {
+      "id": "bae5ce40-04d7-5872-b8c8-b500158fce05",
+      "node_id": "c533f48b-1fed-5986-a3aa-7af02786c42a",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1JPrF-cOQAvrgvYs-Nrp9Sipei11mfhuU/edit?usp=drive_link&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "Liver Function Tests"
+    },
+    {
+      "id": "73710d5c-4153-5fde-a3e9-897b4f63cb06",
+      "node_id": "c533f48b-1fed-5986-a3aa-7af02786c42a",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/document/d/1DTRZ-tYn9JGIY8mpwpQKBTxkh2Jk5Q8m/edit?usp=drive_link&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "Renal Seminary"
+    },
+    {
+      "id": "bfae8d2b-da16-5fcf-81d2-cc12d1724aef",
+      "node_id": "c533f48b-1fed-5986-a3aa-7af02786c42a",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1-jYrypio7KL1BXhwAhiuqf_vvgOmmi3F/edit?usp=sharing&ouid=106679681211519745572&rtpof=true&sd=true",
+      "title": "Protein Seminary"
+    },
+    {
+      "id": "6190a4a6-b20f-5a47-a191-6b98347761c0",
+      "node_id": "eff9fa2e-2cf6-5318-936f-6062caa044f8",
+      "link_kind": "drive_notes",
+      "url": "https://drive.google.com/file/d/18zzqUBd7ZB8_wOY9byD6T2Q6WAKW0vYs/view?usp=drive_link",
+      "title": "All hematology Notes"
+    },
+    {
+      "id": "26147184-0922-5376-8c24-0caeda9c4f24",
+      "node_id": "eff9fa2e-2cf6-5318-936f-6062caa044f8",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/16EvCYfJCZAx_W_11xTLW1k0kuoLbG9Me/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "iron overload"
+    },
+    {
+      "id": "21b46d1b-1750-5113-96af-a154bf23f38c",
+      "node_id": "eff9fa2e-2cf6-5318-936f-6062caa044f8",
+      "link_kind": "drive_notes",
+      "url": "https://drive.google.com/file/d/1kVcm-veIePXuwNkrue0x0ImVuXqLE7_2/view?usp=drive_link",
+      "title": "The Bethesda Handbook of clinical Hematology"
+    },
+    {
+      "id": "d5039500-3596-5fc4-a5f7-75a87712fed8",
+      "node_id": "eff9fa2e-2cf6-5318-936f-6062caa044f8",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/document/d/1L94nrSMrpWeSPh2vxrO_6In7zi4EP_Zq/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "Sample INR"
+    },
+    {
+      "id": "e20b49c2-9a65-5440-b5d4-97673071ed2a",
+      "node_id": "eff9fa2e-2cf6-5318-936f-6062caa044f8",
+      "link_kind": "drive_notes",
+      "url": "https://drive.google.com/file/d/1wGlyjhlaM3JKuqIeZ-0K1JkvhQ_dI1Mu/view?usp=drive_link",
+      "title": "Hematology and blood Transfusion"
+    },
+    {
+      "id": "dc33a6de-61d0-59b2-be3c-5677af1ca1e4",
+      "node_id": "eff9fa2e-2cf6-5318-936f-6062caa044f8",
+      "link_kind": "drive_notes",
+      "url": "https://drive.google.com/file/d/1O3d6uaJnzzD8QgoRDcV5fhN8KGeyHJGL/view?usp=drive_link",
+      "title": "Hematology course outline"
+    },
+    {
+      "id": "80fa617c-93bf-59dd-a88b-e25d04484c50",
+      "node_id": "eff9fa2e-2cf6-5318-936f-6062caa044f8",
+      "link_kind": "drive_notes",
+      "url": "https://drive.google.com/file/d/18DZNtaOS-L14ILS51-AUDBdZ-_0IQhsr/view?usp=drive_link",
+      "title": "Harrison Hematology and Oncology"
+    },
+    {
+      "id": "5b76fa61-652a-5a51-8587-7e3e8c8490e3",
+      "node_id": "eff9fa2e-2cf6-5318-936f-6062caa044f8",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/10FZAhaZ1FGitupdIt6kmitNeFMY5W18b/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "Hemolytic Anemias"
+    },
+    {
+      "id": "44dfbb9b-da4f-582f-b84b-769e96521e9a",
+      "node_id": "eff9fa2e-2cf6-5318-936f-6062caa044f8",
+      "link_kind": "drive_notes",
+      "url": "https://drive.google.com/file/d/1XNSzwy5qOYP5SLStqJJBC2UQV8_tG0lb/view?usp=drive_link",
+      "title": "Clinical Hematology Atlas 6th Edition"
+    },
+    {
+      "id": "f132ab5b-a0ed-5ced-b62a-ea53833ba16a",
+      "node_id": "eff9fa2e-2cf6-5318-936f-6062caa044f8",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1tn2PGYRJnEHE9qQE3K7vHcZEhllholbG/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "216 ANTICOUAGULANT STAINS"
+    },
+    {
+      "id": "a48c5a64-f49a-5ec1-8669-1b6582ccfed3",
+      "node_id": "eff9fa2e-2cf6-5318-936f-6062caa044f8",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1oqNaZt3vr_DsPRiFfr8WFMOnn3YZzagG/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "215 bone marrow transplant"
+    },
+    {
+      "id": "52c59acc-e867-58ef-a2f0-44d03f211d50",
+      "node_id": "eff9fa2e-2cf6-5318-936f-6062caa044f8",
+      "link_kind": "drive_notes",
+      "url": "https://drive.google.com/file/d/1RafTJVH3x53_zHI0DPKjeXSrb7y7xIFB/view?usp=drive_link",
+      "title": "MNPS edited"
+    },
+    {
+      "id": "1dccfc96-fd38-5a88-9eb9-de83543203e8",
+      "node_id": "eff9fa2e-2cf6-5318-936f-6062caa044f8",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1uO4UvcNPYtX1iSzYQZ03IJT5UsairjSW/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "Multiple Myeloma"
+    },
+    {
+      "id": "c1d5be39-9f10-528d-bffd-0acf5f7454af",
+      "node_id": "eff9fa2e-2cf6-5318-936f-6062caa044f8",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/10LBA8ww3DWzBgHQD9zMLdqgGItAN85KR/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "Megaloblastic Anemia"
+    },
+    {
+      "id": "b415c464-fe44-553c-b4f6-8a06cd14df62",
+      "node_id": "eff9fa2e-2cf6-5318-936f-6062caa044f8",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/12kP04ewJjBaFA_geKKkWxrW8zvN8NtZC/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "NHL-1"
+    },
+    {
+      "id": "fdc7d49e-df7d-51f8-9f0b-da69fa7b2862",
+      "node_id": "eff9fa2e-2cf6-5318-936f-6062caa044f8",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1xj2giCky2SdOv0ZAyscUtNFKYpTG2mXc/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "Sideroblastic Anemia"
+    },
+    {
+      "id": "b02a188b-2ec1-5a32-80e9-48d5745fecf9",
+      "node_id": "eff9fa2e-2cf6-5318-936f-6062caa044f8",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1sDLNwdsr7zGtHcffdvj9qXsaoR5wnK_r/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "Iron Metabolism"
+    },
+    {
+      "id": "5b87abbf-e914-59ca-bee6-283ea6977eab",
+      "node_id": "eff9fa2e-2cf6-5318-936f-6062caa044f8",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/15DnpMr3HVNJ23voSsSJYejZgriBe4MGv/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "Iron metabolism"
+    },
+    {
+      "id": "2e314f73-ced8-5304-9684-715abf3eb664",
+      "node_id": "eff9fa2e-2cf6-5318-936f-6062caa044f8",
+      "link_kind": "drive_notes",
+      "url": "https://drive.google.com/file/d/1vAbgO1wD8zN4EAqFxo3pAPHWSQ_VS0eI/view?usp=drive_link",
+      "title": "Leukaemia"
+    },
+    {
+      "id": "d16e4928-c675-5df1-8a63-f174c5faf86b",
+      "node_id": "eff9fa2e-2cf6-5318-936f-6062caa044f8",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1hYWrlReaSSMj71EWjXa7-17oEGhwoF74/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "Normal Hemostasis"
+    },
+    {
+      "id": "ee70ffb7-fe12-565b-bb39-d44036845242",
+      "node_id": "eff9fa2e-2cf6-5318-936f-6062caa044f8",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1XS8NTnNErfqrePgrkoV_ZI195wG9cF70/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "Disorders of White Blood Cells"
+    },
+    {
+      "id": "44e8d1ff-42fe-594c-ae00-3876c5c8dc00",
+      "node_id": "eff9fa2e-2cf6-5318-936f-6062caa044f8",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1SrNF3Inq77UJSOuBPNMfDdEzbe4exUk5/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "Thrombosis and Thrombophilia"
+    },
+    {
+      "id": "fb3d8e99-66ce-5f77-8820-de7576ee3ae3",
+      "node_id": "eff9fa2e-2cf6-5318-936f-6062caa044f8",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1TncTj_I0bzF8ywi7wARazFhN1jR6UwKm/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "Normal Blood Ranges and RBCs indices"
+    },
+    {
+      "id": "537a98be-ada8-54b3-83c0-007bea04644b",
+      "node_id": "9a2a9ec3-1e12-5131-b0cb-0f7083e79a82",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1hFvWE-PEEJvqxdD1XTRqWQqMPII8WVY7/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "Viral Haemoragic Fever"
+    },
+    {
+      "id": "fc587cfe-231b-51fe-98e3-a6eea8cf9da5",
+      "node_id": "9a2a9ec3-1e12-5131-b0cb-0f7083e79a82",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1w3YuhKqPvChD_tzcTPGBmLkR6KJ8iXI3/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "Vaccines"
+    },
+    {
+      "id": "1f267e69-b0c3-51da-861f-842b55db5f3e",
+      "node_id": "9a2a9ec3-1e12-5131-b0cb-0f7083e79a82",
+      "link_kind": "drive_notes",
+      "url": "https://drive.google.com/file/d/1gyHoO8h4-ft4QMtvwXPdHBxEvRm157Do/view?usp=drive_link",
+      "title": "Rubella virus, Corona Virus"
+    },
+    {
+      "id": "22bba078-a9ba-502a-ac22-6c6238b7a8d2",
+      "node_id": "9a2a9ec3-1e12-5131-b0cb-0f7083e79a82",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1PbNOzGR4wkDwwoBr56EpSfErH9rlb8H0/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "Pox and Herpes Viruses"
+    },
+    {
+      "id": "502e5404-b1b6-58b3-82aa-e09b0f1e79a0",
+      "node_id": "9a2a9ec3-1e12-5131-b0cb-0f7083e79a82",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/10ZnGdPSapAWAs_z7LZxgTEs7FzkpjHfK/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "Paramyxoviruses"
+    },
+    {
+      "id": "f16e2fa8-bdbd-5391-94fa-de12bf39095b",
+      "node_id": "9a2a9ec3-1e12-5131-b0cb-0f7083e79a82",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1dfBUCkh61zqMhQ6ngWGI_IsBombRInwk/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "Negative SsRNA"
+    },
+    {
+      "id": "50b08a5c-a04b-579c-bdc7-58bb2ca3efa7",
+      "node_id": "265921bc-35f6-5b95-b60d-f1cbe5c03bfd",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1mRtnI6tZOjQgJ2R4MPVf2LbZadWBeo2m/edit?usp=sharing&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "Urine Formation"
+    },
+    {
+      "id": "785a8768-89a5-56bd-a46a-8981a611d8f5",
+      "node_id": "265921bc-35f6-5b95-b60d-f1cbe5c03bfd",
+      "link_kind": "drive_notes",
+      "url": "https://drive.google.com/file/d/1f4ItOJMh7rTTPioJkfASSMWPzzp3xQu2/view?usp=drive_link",
+      "title": "Types- Ling -Disease - Ohio State University"
+    },
+    {
+      "id": "688741d6-6280-579f-881d-8d181b9f5f12",
+      "node_id": "265921bc-35f6-5b95-b60d-f1cbe5c03bfd",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/11FJ6HX8H22STZyCZw3iUhlPGOB4UCKlV/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "Thyroid And the Parathyroid Glands"
+    },
+    {
+      "id": "9a1bcd3e-a5ce-58bd-8103-3a489e55077a",
+      "node_id": "265921bc-35f6-5b95-b60d-f1cbe5c03bfd",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1M_RjqzZsQhZnQQvWsl_6BqLZEeypuMMo/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "The Pirtuitary and the Hypothalamus"
+    },
+    {
+      "id": "79e3d291-1d8d-5bb4-916f-11daad1e5092",
+      "node_id": "265921bc-35f6-5b95-b60d-f1cbe5c03bfd",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1fE-pW4zzSU-txomjXOhR_ma56St1o7Jo/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "The Adrenal Medulla"
+    },
+    {
+      "id": "438d75b1-89da-5886-a002-281eb4291335",
+      "node_id": "265921bc-35f6-5b95-b60d-f1cbe5c03bfd",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1Y9WXb7HnxySGjqgKXGm5CyFXMgQahe8_/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "The Anatomical structure of the Respiratory System"
+    },
+    {
+      "id": "5ab6403f-44ee-51a7-a136-9bbff46e2d64",
+      "node_id": "265921bc-35f6-5b95-b60d-f1cbe5c03bfd",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1veiJqM5aPp_SARfsNyd-VEvUVRg1cAjZ/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "Sex Hormones"
+    },
+    {
+      "id": "f40f686c-4871-5526-9537-3e26711b9ae6",
+      "node_id": "265921bc-35f6-5b95-b60d-f1cbe5c03bfd",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1V8UJlXdyi2E_DJrt16dbOZOhLNm0J6wO/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "Pulmonary Ventilation"
+    },
+    {
+      "id": "50265364-36dd-5a80-9644-660193a20263",
+      "node_id": "265921bc-35f6-5b95-b60d-f1cbe5c03bfd",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1zSrwd81biOE0fxjwb6Am8BnUQ4n768eJ/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "Physiology of the Pancreas"
+    },
+    {
+      "id": "6d2ff2cb-5610-5632-bff3-5c23f387a3bc",
+      "node_id": "265921bc-35f6-5b95-b60d-f1cbe5c03bfd",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1I6YehpLbTl1--vaN5sUupqExIGHHXgiU/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "Micturition"
+    },
+    {
+      "id": "92c026b3-3b60-59f3-8e8e-1d8cd955d29d",
+      "node_id": "265921bc-35f6-5b95-b60d-f1cbe5c03bfd",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1pqtDpAi1Kk8H3LhG6ofyGjJ_ZnnaGNh-/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "Mechanics Of Respiration"
+    },
+    {
+      "id": "c9e3a42d-5d45-53cf-9260-1be0982f7ff2",
+      "node_id": "265921bc-35f6-5b95-b60d-f1cbe5c03bfd",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1iWs7pt5aKCOEJe9bh1FIxCwIPF1b939o/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "Lung Volumes"
+    },
+    {
+      "id": "24ae12b9-6251-511f-9f58-82c8a3f051f1",
+      "node_id": "265921bc-35f6-5b95-b60d-f1cbe5c03bfd",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/16Os13NvXNCAKI4W7zWF0JgNOUIxgmCIj/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "Kidney Function"
+    },
+    {
+      "id": "7056e41d-3f2f-51cb-bd44-0747135944d0",
+      "node_id": "265921bc-35f6-5b95-b60d-f1cbe5c03bfd",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1JmqXf29ElHGc6Zaq0Nzgbv6DkPUm5tTw/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "JuxtaMeduallry Apparatus"
+    },
+    {
+      "id": "2ac5fb8b-c43d-5b18-9215-8722cea08819",
+      "node_id": "265921bc-35f6-5b95-b60d-f1cbe5c03bfd",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1G3tLdGHA8RRokJvovBybQDq4bJsIbSiz/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "Hypertension and Shock"
+    },
+    {
+      "id": "7447a3b7-f65a-5ef6-9ad6-7f4c0ea7899d",
+      "node_id": "265921bc-35f6-5b95-b60d-f1cbe5c03bfd",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1bz4M0kLZgDSKS7ac-zqvbjjGurEQ_VOY/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "Hormones from other  organs and local Hormones"
+    },
+    {
+      "id": "6cb91bdc-45cb-526d-8fc3-aedb41790be4",
+      "node_id": "265921bc-35f6-5b95-b60d-f1cbe5c03bfd",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1euZe0c4rFbeVujL3IIMOOAd1HAvCYGx8/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "Git Introduction"
+    },
+    {
+      "id": "f850fdb4-ff07-552e-98d3-8f4d23087fdf",
+      "node_id": "265921bc-35f6-5b95-b60d-f1cbe5c03bfd",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1AR-JqVHrZ0nRVdCMBPNx-CCr2nnSMz6p/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "GAs Transport"
+    },
+    {
+      "id": "7e6f1895-a2f3-5728-beaf-c8c5b7256025",
+      "node_id": "265921bc-35f6-5b95-b60d-f1cbe5c03bfd",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1iQ8gxrS9gooitzKNiCBSMgWm1GrFRqMd/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "Gas Exchange in the lungs"
+    },
+    {
+      "id": "61711704-fe2f-56a2-a896-e28eb1cfdcf5",
+      "node_id": "265921bc-35f6-5b95-b60d-f1cbe5c03bfd",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1up62RNIBcLezyqaFfBZlqE4-KaPGnKYH/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "Endocrinology"
+    },
+    {
+      "id": "d78ec77e-ec3a-5423-ab1e-58aba740ff56",
+      "node_id": "265921bc-35f6-5b95-b60d-f1cbe5c03bfd",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1cdes8t15St0-uKfbnxTfLWatuS3ALIQP/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "ElectroCardiogram"
+    },
+    {
+      "id": "48abe746-7b83-5037-a6a1-2a8382cc5ba8",
+      "node_id": "265921bc-35f6-5b95-b60d-f1cbe5c03bfd",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/10u6CHxsD72UOdwFFACj2d2TCI7kZhO6-/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "CVS"
+    },
+    {
+      "id": "0f9a5706-f2a9-57e7-ae35-c5f3db2e7b26",
+      "node_id": "265921bc-35f6-5b95-b60d-f1cbe5c03bfd",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1KGL082xIJiMRG-7J4lFAPV6JZPZgpMGO/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "CVS2"
+    },
+    {
+      "id": "cb1295e5-e60e-563c-b6d8-3da0eefc106e",
+      "node_id": "265921bc-35f6-5b95-b60d-f1cbe5c03bfd",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1qrn-7pOhHTL_GptfWRWLhpPBpLZV6cLw/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "Control Of Respiration"
+    },
+    {
+      "id": "25c5401a-ad4b-51a8-8581-f3a0249017ae",
+      "node_id": "265921bc-35f6-5b95-b60d-f1cbe5c03bfd",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1H5aALfmFxoulcNSbjY5JCWjgnF3OOvDs/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "Concentration of Urine"
+    },
+    {
+      "id": "6956b2a0-30d6-5790-a254-e5ff279c5b3a",
+      "node_id": "265921bc-35f6-5b95-b60d-f1cbe5c03bfd",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1XExlkq0r6h_opMxaBv_LiPIM1OOwnkS3/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "Cardiac Action Potentional"
+    },
+    {
+      "id": "996b7af5-d9a0-593a-a54e-f258bd654ba7",
+      "node_id": "265921bc-35f6-5b95-b60d-f1cbe5c03bfd",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1klDg2YzhOpBaepEM7RVyk3kep2z7yClS/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "BP and Regulation"
+    },
+    {
+      "id": "31e379f1-8d85-5ba3-b162-2adfd3916d10",
+      "node_id": "265921bc-35f6-5b95-b60d-f1cbe5c03bfd",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1KA7HTUf3-EgfowG49F3Va8KSlX0_AbG2/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "Adrenal Glands"
+    },
+    {
+      "id": "30d24672-2647-5db0-86d7-a4bb6f852de0",
+      "node_id": "444d5953-c0ba-5c1b-b2ce-253e4b52cd88",
+      "link_kind": "drive_notes",
+      "url": "https://drive.google.com/file/d/1YYzDLaeOwUlFMA2zYfINLiye3kj_sNOe/view?usp=drive_link",
+      "title": "Vasoactive Peptides"
+    },
+    {
+      "id": "083374c6-a91a-5250-b77e-53eb4fd326b6",
+      "node_id": "444d5953-c0ba-5c1b-b2ce-253e4b52cd88",
+      "link_kind": "drive_notes",
+      "url": "https://drive.google.com/file/d/1gTBZnoS24c6s2-v57yeBDUKfbwjSip33/view?usp=drive_link",
+      "title": "Serotonin, Agnoist..."
+    },
+    {
+      "id": "861aa34a-76f1-59e7-aa5b-3db47a0f078f",
+      "node_id": "444d5953-c0ba-5c1b-b2ce-253e4b52cd88",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1_lUzuuZBynC0zOrPAlao9gbJED5q2tO1/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "Routes of Drug Administration"
+    },
+    {
+      "id": "23fc6a32-5ed3-5221-95f1-3a29904f25eb",
+      "node_id": "444d5953-c0ba-5c1b-b2ce-253e4b52cd88",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1HGARaWsX8_73jaTOdY2CwNWgWJ_noxKI/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "Pk Absorption"
+    },
+    {
+      "id": "77c484d9-05be-54f8-99d0-39e2762945e0",
+      "node_id": "444d5953-c0ba-5c1b-b2ce-253e4b52cd88",
+      "link_kind": "drive_notes",
+      "url": "https://drive.google.com/file/d/1n6mRzKQds828w6oxW134JGbanWjZuBdU/view?usp=drive_link",
+      "title": "Pharmacology(snapshots)"
+    },
+    {
+      "id": "eac9a4db-c890-5a07-8375-4be54dfda766",
+      "node_id": "444d5953-c0ba-5c1b-b2ce-253e4b52cd88",
+      "link_kind": "drive_notes",
+      "url": "https://drive.google.com/file/d/1VIZuo_Bq_ruoZwcZJ2ZigLufvGtkfxuN/view?usp=drive_link",
+      "title": "Pharmacodynamics"
+    },
+    {
+      "id": "ae07ad15-38fd-5f22-89db-3c30eaa0bcb8",
+      "node_id": "444d5953-c0ba-5c1b-b2ce-253e4b52cd88",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1kabJMPvm-7WHgXfx5PsCulrd3QE3aQy5/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "Pharmaco -D Martins"
+    },
+    {
+      "id": "b1cd4e0e-bf2f-5a83-8f80-27cf1420492c",
+      "node_id": "444d5953-c0ba-5c1b-b2ce-253e4b52cd88",
+      "link_kind": "drive_notes",
+      "url": "https://drive.google.com/file/d/1Q5ayUjVN3DPcVDLiee-qpV9gtY3lBqVl/view?usp=drive_link",
+      "title": "Opoid analgesics by Chans"
+    },
+    {
+      "id": "ab9c755d-c854-544f-b1bc-b5ac659cd9ed",
+      "node_id": "444d5953-c0ba-5c1b-b2ce-253e4b52cd88",
+      "link_kind": "drive_notes",
+      "url": "https://drive.google.com/file/d/1krlJPH_OizP3XyAS3uEuf0J6KHePL8BM/view?usp=drive_link",
+      "title": "Ergot Alkaloids"
+    },
+    {
+      "id": "8c4576a5-af16-5b25-be06-3a0ac69010c4",
+      "node_id": "444d5953-c0ba-5c1b-b2ce-253e4b52cd88",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1HNNiw2uJD5Ej8EyH2FItaL8F-JgRN_qq/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "Drug Discovery And Development"
+    },
+    {
+      "id": "8c89830e-411f-5ab1-ad36-a13b32302006",
+      "node_id": "444d5953-c0ba-5c1b-b2ce-253e4b52cd88",
+      "link_kind": "drive_notes",
+      "url": "https://drive.google.com/file/d/1GJvO1o0DbT-c5xdMC0vitlEb-pyjCK57/view?usp=drive_link",
+      "title": "Non Steroidal Antiinflammatory Drus"
+    },
+    {
+      "id": "ba30f711-43b2-57bb-b04d-705d1e7e3018",
+      "node_id": "444d5953-c0ba-5c1b-b2ce-253e4b52cd88",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1d0xF0wzqHdwLmjuQva5p2XJLlu4SNL0r/edit?usp=sharing&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "Cholinergic receptors"
+    },
+    {
+      "id": "96f4c4e9-97f2-50cd-aba9-0d1044938654",
+      "node_id": "444d5953-c0ba-5c1b-b2ce-253e4b52cd88",
+      "link_kind": "drive_notes",
+      "url": "https://docs.google.com/presentation/d/1Vyf1U9_YsK4yGXt9HAJzmPE8TWFGklPQ/edit?usp=drive_link&ouid=108814672169895566040&rtpof=true&sd=true",
+      "title": "Cholinergic Drugs"
+    },
+    {
+      "id": "fb38c148-f439-59cc-95e7-5feb1952f413",
+      "node_id": "444d5953-c0ba-5c1b-b2ce-253e4b52cd88",
+      "link_kind": "drive_notes",
+      "url": "https://drive.google.com/file/d/1qRaiGhNnolQyCd39e_f80iKiqvfEaulD/view?usp=drive_link",
+      "title": "BP404t"
+    },
+    {
+      "id": "162299c1-22d5-5779-99b6-79cad3f6585c",
+      "node_id": "444d5953-c0ba-5c1b-b2ce-253e4b52cd88",
+      "link_kind": "drive_notes",
+      "url": "https://drive.google.com/file/d/1tgiPosbY7nb7-RehU7O88GJPFazhAcpK/view?usp=drive_link",
+      "title": "Autacoids Pharmacology"
+    }
+  ]
+}
